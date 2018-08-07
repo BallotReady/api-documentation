@@ -156,7 +156,7 @@ JSON dictionary
 **Request Syntax:**
       To query candidates:
       
-      curl -H "x-api-key: ***REMOVED***" "https://api.civicengine.com/candidate/1"
+      curl -H "x-api-key: API_KEY" "https://api.civicengine.com/candidate/1"
       
 **Return Type:**
 
