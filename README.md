@@ -1,6 +1,6 @@
 # api-documentation
 
-# BallotReady API Documentation
+# CivicEngine API Documentation
 
 **API Key:** APIKEY
 
