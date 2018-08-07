@@ -1,9 +1,6 @@
-# api-documentation
-
 # CivicEngine API Documentation
 
 **API Key:** APIKEY
-
 **API Host:** api.civicengine.com
 
 
