@@ -80,9 +80,11 @@ JSON dictionary
 
 ## Positions API <a name="positions_api"></a>
 **Parameters:**
-
+      Note: Users can search with EITHER address or lat/lon 
+    
       address - primary search criteria
       lat/lon (optional) - instead of using address, pass lat/lon and bypass geocoding
+      
       include_candidates - choose to include candidates in API response or not
       election_id - if you include candidates, you can filter by a specific election_id (see below)
       level - (federal/state/local/county) - return only positions at a single level
