@@ -16,7 +16,7 @@
 **Parameters:**
 
       state - state the election takes place in
-      end_at - the end date of queried elections in the search request
+      end_at -  end timestamp of queried elections in the search request
       updated_since - beginning timestamp of record updates in the search request
 
 **Request Syntax:**
