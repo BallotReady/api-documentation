@@ -16,9 +16,8 @@
 **Parameters:**
 
       state - state the election takes place in
-      start_at - the start date of queried elections in the search requests
-      end_at - the end date of queried elections in the search requests
-      updated_at - timestamp of record udpate
+      end_at - the end date of queried elections in the search request
+      updated_since - beginning timestamp of record updates in the search request
 
 **Request Syntax:**
 
@@ -81,12 +80,21 @@ JSON dictionary
       Note: Users can search with EITHER address or lat/lon 
     
       address - primary search criteria
-      lat/lon (optional) - instead of using address, pass lat/lon and bypass geocoding
-      
-      include_candidates - choose to include candidates in API response or not
+      county - the county the position is held in
       election_id - if you include candidates, you can filter by a specific election_id (see below)
+      exclude_statewide - option to exclude statewide positions
+      include_candidates - choose to include candidates in API response or not
+      include_endorsements  
+      include_office_holders 
+      include_volunteer_urls  
       level - (federal/state/local/county) - return only positions at a single level
+      lat/lon (optional) - instead of using address, pass lat/lon and bypass geocoding
       search_radius - return positions within X miles of address (up to 30)
+      state - the state the position is held in
+      tenant 
+      year 
+      
+
 
 **Request Syntax:**
       
@@ -147,12 +155,7 @@ JSON dictionary
 ## Candidates API <a name="candidates_api"></a>
 **Parameters:**
 
-      address - primary search criteria
-      lat/lon (optional) - instead of using address, pass lat/lon and bypass geocoding
-      include_candidates - choose to include candidates in API response or not
-      election_id - if you include candidates, you can filter by a specific election_id (see below)
-      level - (federal/state/local/county) - return only positions at a single level
-      search_radius - return positions within X miles of address (up to 30)
+      tenant_id 
 
 **Request Syntax:**
       To query candidates:
