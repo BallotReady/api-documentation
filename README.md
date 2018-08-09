@@ -15,12 +15,10 @@
 ## Elections API  <a name="elections_api"></a>
 **Parameters:**
 
-      address - primary search criteria
-      lat/lon (optional) - instead of using address, pass lat/lon and bypass geocoding
-      include_candidates - choose to include candidates in API response or not
-      election_id - if you include candidates, you can filter by a specific election_id (see below)
-      level - (federal/state/local/county) - return only positions at a single level
-      search_radius - return positions within X miles of address (up to 30)
+      state - state the election takes place in
+      start_at - the start date of queried elections in the search requests
+      end_at - the end date of queried elections in the search requests
+      updated_at - timestamp of record udpate
 
 **Request Syntax:**
 
@@ -212,12 +210,7 @@ JSON dictionary
 ## Normalized Positions API <a name="norm_positions_api"></a>
 **Parameters:**
 
-      address - primary search criteria
-      lat/lon (optional) - instead of using address, pass lat/lon and bypass geocoding
-      include_candidates - choose to include candidates in API response or not
-      election_id - if you include candidates, you can filter by a specific election_id (see below)
-      level - (federal/state/local/county) - return only positions at a single level
-      search_radius - return positions within X miles of address (up to 30)
+None
 
 **Request Syntax:**
 curl -H "x-api-key: APIKEY" "https://api.civicengine.com/normalized-positions"
