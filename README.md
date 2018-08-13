@@ -18,7 +18,7 @@
       state - state the election takes place in
       end_at -  end timestamp of queried elections in the search request
       updated_since - beginning timestamp of record updates in the search request
-
+  
 **Request Syntax:**
 
       To query the election IDs, you can hit the /elections endpoint:
@@ -84,14 +84,14 @@ JSON dictionary
       election_id - if you include candidates, you can filter by a specific election_id (see below)
       exclude_statewide - option to exclude statewide positions
       include_candidates - choose to include candidates in API response or not
-      include_endorsements  
-      include_office_holders 
-      include_volunteer_urls  
+      include_endorsements - choose to include endorsements in API response or not
+      include_office_holders - choose to include office holders in API response or not
+      include_volunteer_urls  - choose to include volunteer urls in API response or not
       level - (federal/state/local/county) - return only positions at a single level
       lat/lon (optional) - instead of using address, pass lat/lon and bypass geocoding
       search_radius - return positions within X miles of address (up to 30)
       state - the state the position is held in
-      tenant 
+      tenant - the customer id
       year 
       
 
@@ -155,7 +155,7 @@ JSON dictionary
 ## Candidates API <a name="candidates_api"></a>
 **Parameters:**
 
-      tenant_id 
+      tenant_id - the customer id
 
 **Request Syntax:**
       To query candidates:
