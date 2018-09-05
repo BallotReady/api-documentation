@@ -81,6 +81,7 @@ JSON dictionary
     
       address - primary search criteria
       county - the county the position is held in
+      election_date - set an election_date to return only candidates who are up for election on that date
       election_id - if you include candidates, you can filter by a specific election_id (see below)
       exclude_statewide - option to exclude statewide positions
       include_candidates - choose to include candidates in API response or not
@@ -101,6 +102,7 @@ JSON dictionary
       To query candidate positions based on address: 
       
       curl -H "x-api-key: APIKEY" "https://api.civicengine.com/positions?include_candidates=1&address=350+5th+New+York+NY+10118"
+
 
 **Return Type:**
 
