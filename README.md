@@ -8,8 +8,9 @@
 1. [Elections API](#elections_api)
 2. [Positions API](#positions_api)
 3. [Candidates API](#candidates_api)
-4. [Normalized Positions API](#norm_positions_api)
-5. [Data Dictionary](#data_dictionary)
+4. [Measures API](#measure_api)
+5. [Normalized Positions API](#norm_positions_api)
+6. [Data Dictionary](#data_dictionary)
 
 
 ## Elections API  <a name="elections_api"></a>
@@ -210,6 +211,37 @@ JSON dictionary
       "id": 8,
       "website_url": "https://www.plannedparenthoodaction.org/",
       "name": "Planned Parenthood Action Fund"
+```
+
+## Measures API  <a name="measures_api"></a>
+**Request Syntax:**
+curl -H "x-api-key: APIKEY" "https://api.civicengine.com/measures"
+
+**Return Type:**
+JSON dictionary
+
+** Returns**
+```
+{
+  "timestamp": datetime,
+  "positions": [
+    {
+      "pro_snippet": string,
+      "con_snippet": string,
+      "title": string,
+      "text": string,
+      "summary": string,
+      "state": string,
+      "row_order": int,
+      "name":  string
+    }
+  ],
+  "coords": {
+    "latitude": float,
+    "longitude": float,
+  },
+  "result_count": int
+}
 ```
 
 ## Normalized Positions API <a name="norm_positions_api"></a>
