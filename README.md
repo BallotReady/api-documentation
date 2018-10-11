@@ -8,7 +8,7 @@
 1. [Elections API](#elections_api)
 2. [Positions API](#positions_api)
 3. [Candidates API](#candidates_api)
-4. [Measures API](#measure_api)
+4. [Measures API](#measures_api)
 5. [Normalized Positions API](#norm_positions_api)
 6. [Data Dictionary](#data_dictionary)
 
@@ -34,45 +34,17 @@ JSON dictionary
 
 ```
 {
-  "timestamp": "2018-08-06T23:08:42.107793",
+  "timestamp": datetime,
   "elections": [
     {
-      "ocd_id": "ocd-division/country:us/state:WA",
-      "name": "Washington 2018 Primary Election",
-      "election_day": "2018-08-07",
-      "updated_at": "2017-10-14T15:22:20.102000",
-      "state": "WA",
-      "id": 339
-    },
-    {
-      "ocd_id": null,
-      "name": "Ohio 08.07.18 Special Election",
-      "election_day": "2018-08-07",
-      "updated_at": "2018-07-28T20:34:00.938562",
-      "state": "OH",
-      "id": 360
-    },
-    {
-      "ocd_id": "ocd-division/country:us/state:MO",
-      "name": "Missouri 2018 Primary Election",
-      "election_day": "2018-08-07",
-      "updated_at": "2018-08-05T01:52:52.084826",
-      "state": "MO",
-      "id": 338
-    },
-    {
-      "ocd_id": "ocd-division/country:us/state:MI",
-      "name": "Michigan 2018 Primary Election",
-      "election_day": "2018-08-07",
-      "updated_at": "2018-07-28T16:47:59.855969",
-      "state": "MI",
-      "id": 337
-    },
-    {
-      "ocd_id": "ocd-division/country:us/state:KS",
-      "name": "Kansas 2018 Primary Election",
-      "election_day": "2018-08-07",
-      "updated_at": "2018-08-05T01:47:44.698766",
+      "ocd_id": string,
+      "name": string,
+      "election_day": date_string,
+      "updated_at": datetime,
+      "state": string,
+      "id": int
+    }]
+}
 ```
 
 
