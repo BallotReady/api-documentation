@@ -7,7 +7,7 @@
 ## Table of contents
 1. [Elections API](#elections_api)
 2. [Positions API](#positions_api)
-** [Election Results](#election_results)
+  * [Election Results](#election_results)
 3. [Candidates API](#candidates_api)
 4. [Measures API](#measures_api)
 5. [Normalized Positions API](#norm_positions_api)
