@@ -7,6 +7,7 @@
 ## Table of contents
 1. [Elections API](#elections_api)
 2. [Positions API](#positions_api)
+** [Election Results](#election_results)
 3. [Candidates API](#candidates_api)
 4. [Measures API](#measures_api)
 5. [Normalized Positions API](#norm_positions_api)
@@ -125,7 +126,7 @@ JSON dictionary
               "url": "https://www.facebook.com/CheleFarley/",
 ```
 
-### Notes on Election Results
+### Notes on Election Results <a name="election_results"></a>
 
 In the case of a PAST election, the election result will be in the candidate object returned above as the `election_result` object. It can take one of three values (WON, LOST, RUNOFF, JUNGLE_WIN).  Below is an example of a snippet of the candidate response with an election result in it.
 
