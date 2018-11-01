@@ -125,6 +125,22 @@ JSON dictionary
               "url": "https://www.facebook.com/CheleFarley/",
 ```
 
+** Notes on Election Results **
+
+In the case of a PAST election, the election result will be in the candidate object returned above as the `election_result` object. It can take one of three values (WON, LOST, RUNOFF, JUNGLE_WIN).  Below is an example of a snippet of the candidate response with an election result in it.
+
+```
+          "first_name": "Clare",
+          "last_name": "Quish",
+          "election_result": "Won",
+          "suffix": "",
+          "incumbent": false,
+          "position_id": 78977,
+          "election_id": 5,
+          "election_day": "2018-03-20",
+```
+
+The best way to make sure you get only the values for the election you want is to query on the `election_date` parameter. Once the election passes, we'll being updating the `election_result` flags.
 
 
 ## Candidates API <a name="candidates_api"></a>
