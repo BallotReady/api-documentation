@@ -133,7 +133,7 @@ In the case of a PAST election, the election result will be in the candidate obj
 ```
           "first_name": "Clare",
           "last_name": "Quish",
-          "election_result": "Won",
+          "election_result": "WON",
           "suffix": "",
           "incumbent": false,
           "position_id": 78977,
