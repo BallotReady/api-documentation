@@ -125,7 +125,7 @@ JSON dictionary
               "url": "https://www.facebook.com/CheleFarley/",
 ```
 
-** Notes on Election Results **
+### Notes on Election Results
 
 In the case of a PAST election, the election result will be in the candidate object returned above as the `election_result` object. It can take one of three values (WON, LOST, RUNOFF, JUNGLE_WIN).  Below is an example of a snippet of the candidate response with an election result in it.
 
