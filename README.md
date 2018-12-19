@@ -74,9 +74,9 @@ JSON dictionary
 **Request Syntax:**
       
       To query candidate positions based on address: 
-      
+      ```
       curl -H "x-api-key: APIKEY" "https://api.civicengine.com/positions?include_candidates=1&address=350+5th+New+York+NY+10118"
-
+      ```
 
 **Return Type:**
 
@@ -152,7 +152,9 @@ The best way to make sure you get only the values for the election you want is t
 **Request Syntax:**
       To query candidates:
       
+      ```
       curl -H "x-api-key: API_KEY" "https://api.civicengine.com/candidate/1"
+      ```
       
 **Return Type:**
 
@@ -204,7 +206,17 @@ JSON dictionary
 
 ## Measures API  <a name="measures_api"></a>
 **Request Syntax:**
-curl -H "x-api-key: APIKEY" "https://api.civicengine.com/measures"
+```
+curl -H "x-api-key: APIKEY" "https://api.civicengine.com/measures?address=60202&election_date=2018-11-07"
+```
+The measures API accepts the following parameters:
+* lng - longitude
+* lat - latitude to search for
+* address - address to search for
+* election_id
+* election_date
+
+Note that either (lng, lat) OR an address is required AND an election_id OR an election_date is required.
 
 **Return Type:**
 JSON dictionary
