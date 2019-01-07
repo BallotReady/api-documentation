@@ -161,47 +161,43 @@ The best way to make sure you get only the values for the election you want is t
 JSON dictionary
       
 **Returns:**
+
+Below is sample return dictionary for a candidate request. Note that "stances" are embedded within "issues". For instance, a candidate may have stances about the issue of National Security.
+
 ```
 {
-  "thumb_url": "https://br-production-assets.s3.amazonaws.com/uploads/candidate/headshot/1/thumb_1.jpg",
+  "thumb_url": string,
   "urls": [
     {
-      "url": "https://twitter.com/HillaryClinton",
-      "type": "twitter"
-    },
-    {
-      "url": "https://www.hillaryclinton.com/",
-      "type": "website"
+      "url": string
+      "type": enum(twitter, facebook, website)
     }
   ],
-  "first_name": "Hillary",
-  "last_name": "Clinton",
-  "middle_name": null,
-  "suffix": null,
+  "first_name": string,
+  "last_name": string,
+  "middle_name": string,
+  "suffix": string,
+  "issues": [
+    {
+      "is_question": boolean,
+      "issue_id": int,
+      "stances": [
+        {
+          "reference_url": string,
+          "stance_id": int,
+          "candidate_id": int,
+          "description": string
+         }
+       ]
+  }],   
   "endorsements": [
     {
-      "logo_url": "https://br-production-assets.s3.amazonaws.com/uploads/organization/logo/2/TurnoutProject.png",
-      "id": 2,
-      "website_url": null,
-      "name": "Turnout Project"
-    },
-    {
-      "logo_url": "https://br-production-assets.s3.amazonaws.com/uploads/organization/logo/3/sierraclub_copy.png",
-      "id": 3,
-      "website_url": "https://www.sierraclub.org/",
-      "name": "Sierra Club"
-    },
-    {
-      "logo_url": "https://br-production-assets.s3.amazonaws.com/uploads/organization/logo/5/USChamberOfCommerce.png",
-      "id": 5,
-      "website_url": null,
-      "name": "US Chamber Of Commerce"
-    },
-    {
-      "logo_url": "https://br-production-assets.s3.amazonaws.com/uploads/organization/logo/8/pp_logo.png",
-      "id": 8,
-      "website_url": "https://www.plannedparenthoodaction.org/",
-      "name": "Planned Parenthood Action Fund"
+      "logo_url": string,
+      "id": int,
+      "website_url": string,
+      "name": string
+    }]
+}
 ```
 
 ## Measures API  <a name="measures_api"></a>
