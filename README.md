@@ -181,6 +181,8 @@ Below is sample return dictionary for a candidate request. Note that "stances" a
     {
       "is_question": boolean,
       "issue_id": int,
+      "name": string,
+      "question_text": string,
       "stances": [
         {
           "reference_url": string,
