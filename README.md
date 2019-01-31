@@ -12,7 +12,6 @@
 4. [Measures API](#measures_api)
 5. [Normalized Positions API](#norm_positions_api)
 6. [Elected Officials API](#elected_officials)
-7. [Data Dictionary](#data_dictionary)
 
 
 ## Elections API  <a name="elections_api"></a>
@@ -204,6 +203,9 @@ Below is sample return dictionary for a candidate request. Note that "stances" a
 ```
 
 ## Measures API  <a name="measures_api"></a>
+
+This API, when give an address or Lat/Longitude pair, will return all measures up for election on a given election date.
+
 **Request Syntax:**
 ```
 curl -H "x-api-key: APIKEY" "https://api.civicengine.com/measures?address=60202&election_date=2018-11-07"
@@ -245,6 +247,9 @@ JSON dictionary
 ```
 
 ## Normalized Positions API <a name="norm_positions_api"></a>
+
+This API will return the full list of normalized positions. Normalized positions are a standardized way of handling position types - for instance, US Senators will all have the same normalized position. So will "City Dogcatcher" or any other elected position. This allows us to represent office holders and election candidates across multiple locations with an id identifying the role.
+
 **Parameters:**
 
 None
@@ -260,104 +265,11 @@ JSON dictionary
 ``` 
 [
   {
-    "mtfcc": null,
-    "id": 2090,
-    "name": "Township Constable"
+    "mtfcc": string,
+    "id": integer,
+    "name": string
   },
-  {
-    "mtfcc": null,
-    "id": 2000,
-    "name": "Party Officer - City"
-  },
-  {
-    "mtfcc": null,
-    "id": 2040,
-    "name": "Township Executive"
-  },
-  {
-    "mtfcc": null,
-    "id": 1630,
-    "name": "City Taxpayer Advocate"
-  },
-  {
-    "mtfcc": null,
-    "id": 2380,
-    "name": "Local Higher Education Board"
-  },
-  {
-    "mtfcc": null,
-    "id": 2060,
-    "name": "Township Legislative"
-  },
-  {
-    "mtfcc": null,
-    "id": 1780,
-    "name": "City Court Clerk"
-  },
-  {
-    "mtfcc": null,
-    "id": 4030,
-    "name": "Judicial Circuit Court (1)"
-  },
-  {
-    "mtfcc": null,
-    "id": 1820,
-    "name": "Fire Committee"
-  },
-  {
-    "mtfcc": null,
-    "id": 2460,
-    "name": "Regional Planning District"
-  },
-  {
-    "mtfcc": null,
-    "id": 1600,
-    "name": "City Collector"
-  },
-  {
-    "mtfcc": null,
-    "id": 2550,
-    "name": "Mosquito Abatement District"
-  },
-  {
-    "mtfcc": null,
-    "id": 2320,
-    "name": "Combination - Fire And Healthcare District"
-  },
-  {
-    "mtfcc": null,
-    "id": 925,
-    "name": "County Trustee"
-  },
-  {
-    "mtfcc": null,
-    "id": 1290,
-    "name": "County Superintendent Of Schools"
-  },
-  {
-    "mtfcc": null,
-    "id": 1330,
-    "name": "County Road Commissioner"
-  },
-  {
-    "mtfcc": null,
-    "id": 2030,
-    "name": "Township Collector"
-  },
-  {
-    "mtfcc": null,
-    "id": 1580,
-    "name": "City Auditor"
-  },
-  {
-    "mtfcc": null,
-    "id": 2430,
-    "name": "Forest District"
-  },
-  {
-    "mtfcc": null,
-    "id": 980,
-    "name": "County Sheriff"
+]
 ```
 
 ## Elected Officials API  <a name="elected_officials"></a>
