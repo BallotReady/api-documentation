@@ -317,6 +317,13 @@ The `office_holders` list will consist of office holder records in the form:
       "start_at": string,
       "suffix": string,
       "level": enum(FEDERAL, STATE, LOCAL, PARTY),
+       "normalized_position": {
+        "id": int,
+        "mtfcc": string,
+        "description": string,
+        "name": string,
+        "level": string,
+      },
       "position_id": int,
       "position_type": string,
       "end_at": string,
