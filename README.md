@@ -274,7 +274,7 @@ JSON dictionary
 
 ## Elected Officials API  <a name="elected_officials"></a>
 
-This API, when given an address OR a (latitude, longitude) pair will return the office holders (also known as elected officials) for the given location.
+This API, when given an address OR a (latitude, longitude) pair will return the office holders (also known as elected officials) for the given location. Note: the endpoint has a dash in it `office-holders` and not an underscore.
 
 **Parameters:**
 * address - Address (Required, OR lat/lng is required)
@@ -282,7 +282,7 @@ This API, when given an address OR a (latitude, longitude) pair will return the 
 * lng - Longitude 
 
 **Request Syntax:**
-curl -H "x-api-key: APIKEY" "https://api.civicengine.com/office_holders?address=60202"
+curl -H "x-api-key: APIKEY" "https://api.civicengine.com/office-holders?address=60202"
 
 **Return Type:**
 
