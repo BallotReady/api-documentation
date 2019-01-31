@@ -11,7 +11,8 @@
 3. [Candidates API](#candidates_api)
 4. [Measures API](#measures_api)
 5. [Normalized Positions API](#norm_positions_api)
-6. [Data Dictionary](#data_dictionary)
+6. [Elected Officials API](#elected_officials)
+7. [Data Dictionary](#data_dictionary)
 
 
 ## Elections API  <a name="elections_api"></a>
@@ -359,58 +360,61 @@ JSON dictionary
     "name": "County Sheriff"
 ```
 
+## Elected Officials API  <a name="elected_officials"></a>
 
+This API, when given an address OR a (latitude, longitude) pair will return the office holders (also known as elected officials) for the given location.
 
-## Data Dictionary <a name="data_dictionary"></a>
+**Parameters:**
+* address - Address (Required, OR lat/lng is required)
+* lat - Latitude 
+* lng - Longitude 
 
-## Elections API:
+**Request Syntax:**
+curl -H "x-api-key: APIKEY" "https://api.civicengine.com/office_holders?address=60202"
 
-Data Field | Description
------------- | -------------
-election_id | unique id representing a specific election
-name | the name describing the specific election (i.e. Tennessee 2018 Primary Election)
-election_date | the date of the election
-state | the state the election takes place in
-dates | an indicator for whether the election took place in the past or will take place in the future
-candidates | the number of candidates running in the election
-positions | the number of positions open candidates can compete in
+**Return Type:**
 
+JSON dictionary
+      
+**Returns:**
 
-## Positions API:
+```
+{
+  "timestamp": datetime,
+  "office_holders": list,
+  "coords": {
+    "latitude": float,
+    "longitude": float
+  },
+  "result_count": integer
+}
+```
 
-Data Field | Description
------------- | -------------
-position_id | unique id reprsenting the position for a candidate
-name | name of the position
-state | state where the position is held
-position_level | an indicator for whether the position is at the local, county, state, or federal level
-city/county | the city or county the position is held in
-next_election_year | the calendar year the next election for this position takes place 
-election_id | 
-current_office_holder | indicator for whether the related office holder is currently in office
-judicial | an indicator representing whether the position is a judicial branch position
+The `office_holders` list will consist of office holder records in the form:
 
-
-## Candidates API:
-
-Data Field | Description
------------- | -------------
-candidate_id | unique id representing each candidate
-name | the name of the candidate
-state | the state the candidate represents
-party | the party the candidate belongs to
-election_id | unique id representing the election the candidate won
-election_day | the day the candidate was elected
-position_level | an indicator for whether the candidate is elected at the local, state, or federal level
-position | the position the candidate was elected to
-current_office_holder | an indicator for whether the candidate is currently in office
-website | the website of the candidate
-org_endorsement | the organizations that have endorsed the candidate
-endorsement_count | the count of endorsements received by the candidate
-photo | an indicator for whether the candidate has a photo on file
-
-
-
-
---------------------------------------------------------------------------------------------------------
+```
+    {
+      "urls": [
+        {
+          "url":  string,
+          "type": enum(website, facebook, twitter)
+        }
+      ],
+      "first_name": string,
+      "last_name": string,
+      "start_at": string,
+      "suffix": string,
+      "level": enum(FEDERAL, STATE, LOCAL, PARTY),
+      "position_id": int,
+      "position_type": string,
+      "end_at": string,
+      "party_name": string,
+      "candidate_id": int,
+      "position_name": string,
+      "middle_name": string,
+      "thumb_url": string,
+      "nickname": string,
+      "photo_url": string,
+      }
+```
 
