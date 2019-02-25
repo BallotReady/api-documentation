@@ -12,6 +12,7 @@
 4. [Measures API](#measures_api)
 5. [Normalized Positions API](#norm_positions_api)
 6. [Elected Officials API](#elected_officials)
+7. [Districts API](#districts)
 
 
 ## Elections API  <a name="elections_api"></a>
@@ -337,3 +338,42 @@ The `office_holders` list will consist of office holder records in the form:
       }
 ```
 
+
+
+## Districts API  <a name="districts_api"></a>
+
+The districts API takes a latitude and longitude and returns the matching districts for that location. Note that this API does not return matching positions but rather returns matching districts only without any election-specific information. This is useful if you want to return which congressional district or state legislative district an address is in. If you are looking for election specific information, please use the `/positions` API above.
+
+**Parameters:**
+
+    * address - Address (Required, OR lat/lng is required)
+    * lat - Latitude 
+    * lng - Longitude 
+
+**Request Syntax:**
+
+      To query the election IDs, you can hit the /elections endpoint:
+      
+      curl -H "x-api-key: APIKEY" "https://api.civicengine.com/districts?address=1060+W+Addison+St+Chicago+IL+60613"
+      
+**Return Type:**
+
+JSON dictionary
+
+**Returns:**
+
+```
+{
+  "timestamp": datetime,
+  "coords": {
+    "latitude": float,
+    "longitude": float
+  },
+  "results": [
+    {
+      "district_type": string,
+      "name": string
+      "district_no": string,
+      "id": string
+    },
+```
