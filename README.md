@@ -340,7 +340,7 @@ The `office_holders` list will consist of office holder records in the form:
 
 
 
-## Districts API  <a name="districts_api"></a>
+## Districts API  <a name="districts"></a>
 
 The districts API takes a latitude and longitude and returns the matching districts for that location. Note that this API does not return matching positions but rather returns matching districts only without any election-specific information. This is useful if you want to return which congressional district or state legislative district an address is in. If you are looking for election specific information, please use the `/positions` API above.
 
