@@ -18,9 +18,10 @@
 ## Elections API  <a name="elections_api"></a>
 **Parameters:**
 
-      state - state the election takes place in
-      end_at -  end timestamp of queried elections in the search request
-      updated_since - beginning timestamp of record updates in the search request
+      state - state the election takes place in (optional)
+      start-at - starting timestamp of queried elections (optional)
+      end_at -  end timestamp of queried elections in the search request (optional)
+      updated_since - beginning timestamp of record updates in the search request (optional)
   
 **Request Syntax:**
 
