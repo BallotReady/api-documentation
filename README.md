@@ -68,7 +68,6 @@ JSON dictionary
       lat/lon (optional) - instead of using address, pass lat/lon and bypass geocoding
       search_radius - return positions within X miles of address (up to 30)
       state - the state the position is held in
-      tenant - the customer id
       year 
       
 
