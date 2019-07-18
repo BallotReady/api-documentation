@@ -22,13 +22,13 @@
       start-at - starting timestamp of queried elections (optional)
       end_at -  end timestamp of queried elections in the search request (optional)
       updated_since - beginning timestamp of record updates in the search request (optional)
-  
+
 **Request Syntax:**
 
       To query the election IDs, you can hit the /elections endpoint:
-      
+
       curl -H "x-api-key: APIKEY" "https://api.civicengine.com/elections"
-      
+
 **Return Type:**
 
 JSON dictionary
@@ -53,8 +53,8 @@ JSON dictionary
 
 ## Positions API <a name="positions_api"></a>
 **Parameters:**
-      Note: Users can search with EITHER address or lat/lon 
-    
+      Note: Users can search with EITHER address or lat/lon
+
       address - primary search criteria
       county - the county the position is held in
       election_date - set an election_date to return only candidates who are up for election on that date
@@ -68,13 +68,13 @@ JSON dictionary
       lat/lon (optional) - instead of using address, pass lat/lon and bypass geocoding
       search_radius - return positions within X miles of address (up to 30)
       state - the state the position is held in
-      year 
-      
+      year
+
 
 
 **Request Syntax:**
-      
-      To query candidate positions based on address: 
+
+      To query candidate positions based on address:
       ```
       curl -H "x-api-key: APIKEY" "https://api.civicengine.com/positions?include_candidates=1&address=350+5th+New+York+NY+10118"
       ```
@@ -152,15 +152,15 @@ The best way to make sure you get only the values for the election you want is t
 
 **Request Syntax:**
       To query candidates:
-      
+
       ```
       curl -H "x-api-key: API_KEY" "https://api.civicengine.com/candidate/1"
       ```
-      
+
 **Return Type:**
 
 JSON dictionary
-      
+
 **Returns:**
 
 Below is sample return dictionary for a candidate request. Note that "stances" are embedded within "issues". For instance, a candidate may have stances about the issue of National Security.
@@ -192,14 +192,46 @@ Below is sample return dictionary for a candidate request. Note that "stances" a
           "description": string
          }
        ]
-  }],   
+  }],
   "endorsements": [
     {
       "logo_url": string,
       "id": int,
       "website_url": string,
       "name": string
-    }]
+    }],
+  "experience":[
+    {
+      "start_year": int,
+      "entry_type": string,
+      "company": string,
+      "end_year" int,
+      "duration": string,
+      "position": "string"
+    }
+  ],
+  "candidacies": [
+    {
+      "is_running_mate": bool,
+      "position_id": int,
+      "election_day": string,
+      "state": string,
+      "sub_area_name_secondary": string,
+      "sub_area_value": string,
+      "party_short_name": string,
+      "party_name": string,
+      "position_name": string,
+      "incumbent": bool,
+      "row_order": int,
+      "sub_area_name": string,
+      "running mate": int,
+      "election_id": int,
+      "sub_area_value_secondary": string
+    },
+    ...
+  ],
+  "bar_association_evaluations": [],
+  "education":[]
 }
 ```
 
@@ -261,9 +293,9 @@ curl -H "x-api-key: APIKEY" "https://api.civicengine.com/normalized-positions"
 **Return Type:**
 
 JSON dictionary
-      
+
 **Returns:**
-``` 
+```
 [
   {
     "mtfcc": string,
@@ -279,8 +311,8 @@ This API, when given an address OR a (latitude, longitude) pair will return the 
 
 **Parameters:**
 * address - Address (Required, OR lat/lng is required)
-* lat - Latitude 
-* lng - Longitude 
+* lat - Latitude
+* lng - Longitude
 
 **Request Syntax:**
 curl -H "x-api-key: APIKEY" "https://api.civicengine.com/office-holders?address=60202"
@@ -288,7 +320,7 @@ curl -H "x-api-key: APIKEY" "https://api.civicengine.com/office-holders?address=
 **Return Type:**
 
 JSON dictionary
-      
+
 **Returns:**
 
 ```
@@ -347,15 +379,15 @@ The districts API takes a latitude and longitude and returns the matching distri
 **Parameters:**
 
     * address - Address (Required, OR lat/lng is required)
-    * lat - Latitude 
-    * lng - Longitude 
+    * lat - Latitude
+    * lng - Longitude
 
 **Request Syntax:**
 
       To query the election IDs, you can hit the /elections endpoint:
-      
+
       curl -H "x-api-key: APIKEY" "https://api.civicengine.com/districts?address=1060+W+Addison+St+Chicago+IL+60613"
-      
+
 **Return Type:**
 
 JSON dictionary
