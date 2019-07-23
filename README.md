@@ -45,7 +45,8 @@ JSON dictionary
       "election_day": date_string,
       "updated_at": datetime,
       "state": string,
-      "id": int
+      "id": int,
+      "type": string,
     }]
 }
 ```
