@@ -77,7 +77,8 @@ JSON dictionary
 
       To query candidate positions based on address:
       ```
-      curl -H "x-api-key: APIKEY" "https://api.civicengine.com/positions?include_candidates=1&address=350+5th+New+York+NY+10118"
+      curl "https://api.civicengine.com/positions?include_candidates=1&address=350%2B5th%2BNew%2BYork%2BNY%2B10118" \
+     -H 'x-api-key: APIKEY'
       ```
 
 **Return Type:**
@@ -87,45 +88,85 @@ JSON dictionary
 **Returns:**
 ```
 {
-  "timestamp": "2018-08-06T22:45:19.142297",
+  "timestamp": "2019-08-05T21:38:48.608189",
   "positions": [
     {
-      "general_filing_end": "2018-07-31",
-      "salary": "174000.00",
-      "description": "The US Senate is one of two chambers of the federal legislature.  Senators are responsible for writing and passing legislation, approving presidential appointments, and ratifying treaties with foreign countries.",
-      "number_of_seats": 1,
-      "position_id": 46210,
-      "position_type": null,
-      "employment_type": "Full Time",
-      "level": "FEDERAL",
-      "paperwork_instructions": "File with State Board of Elections and FEC",
-      "eligibility_requirements": "Senator must be at least thirty years, have been a citizen of the United States for nine years, and must be an inhabitant of the State in which they are running.",
-      "general_date": "NOV",
-      "primary_date": "SEP",
-      "has_unknown_boundaries": false,
-      "state": "NY",
-      "runoff_date": null,
+      "position_id": 268420,
+      "paperwork_instructions": null,
+      "general_date": "2019-02-26",
       "sub_area_value": null,
-      "normalized_position": {
-        "id": 2,
-        "mtfcc": "G4000",
-        "description": null,
-        "name": "US Senate",
-        "level": "federal"
-      },
+      "normalized_position": {},
       "sub_area_name": null,
-      "primary_filing_end": "2018-04-12",
+      "retention": false,
+      "unexpired_term": true,
+      "employment_type": null,
+      "primary_date": "",
+      "state": "NY",
       "candidates": [
         {
           "urls": [
             {
-              "url": "https://www.chelefarleyforsenate.com/",
+              "url": "https://melissamarkviverito.com/",
               "entry_type": "website",
-              "url_id": 95186,
+              "url_id": 154958,
               "type": "website"
             },
             {
-              "url": "https://www.facebook.com/CheleFarley/",
+              "url": "https://www.facebook.com/mmviverito/",
+              "entry_type": "facebook",
+              "url_id": 154960,
+              "type": "facebook"
+            },
+            {
+              "url": "https://twitter.com/MMViverito",
+              "entry_type": "twitter",
+              "url_id": 154963,
+              "type": "twitter"
+            }
+          ],
+          "first_name": "Melissa",
+          "last_name": "Mark-Viverito",
+          "election_result": null,
+          "suffix": null,
+          "incumbent": false,
+          "position_id": 268420,
+          "election_id": 370,
+          "election_day": "2019-02-26",
+          "endorsements": [
+            10,
+            2163
+          ],
+          "id": 305505,
+          "party_name": "Democratic",
+          "middle_name": null,
+          "thumb_url": null,
+          "nickname": null,
+          "slug": "melissa-mark-viverito",
+          "photo_url": null
+        }
+      ],
+      "general_filing_end": "",
+      "description": "The office of Public Advocate for the City of New York is a citywide elected position in New York City, which is first in line to succeed the Mayor. The office serves as a direct link between the electorate and city government, effectively acting as an ombudsman, or \"watchdog,\" for New Yorkers.",
+      "eligibility_requirements": null,
+      "has_unknown_boundaries": false,
+      "slug": null,
+      "salary": null,
+      "number_of_seats": 1,
+      "name": "New York City Public Advocate (unexpired term)",
+      "level": "LOCAL",
+      "position_type": null,
+      "runoff_date": null,
+      "judicial": false,
+      "primary_filing_end": ""
+    }
+  ],
+  "address": "350+5th+New+York+NY+10118",
+  "coords": {
+    "latitude": 40.7482436,
+    "longitude": -73.9851073
+  },
+  "result_count": 1
+}
 ```
 
 ### Notes on Election Results <a name="election_results"></a>
