@@ -171,7 +171,7 @@ JSON dictionary
 
 ### Notes on Election Results <a name="election_results"></a>
 
-In the case of a PAST election, the election result will be in the candidate object returned above as the `election_result` object. It can take one of three values (WON, LOST, RUNOFF, JUNGLE_WIN).  Below is an example of a snippet of the candidate response with an election result in it.
+In the case of a PAST election, the election result will be in the candidate object returned above as the `election_result` object. It can take one of three values (LOSE, WIN, RUNOFF, PRIMARY WIN).  Below is an example of a snippet of the candidate response with an election result in it.
 
 ```
           "first_name": "Clare",
