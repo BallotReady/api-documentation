@@ -191,6 +191,7 @@ The best way to make sure you get only the values for the election you want is t
 **Parameters:**
 
       tenant_id - the customer id
+      election_id - without an election ID, then certain fields (should as stances) will be empty. A candidates stances are specifically linked to an election cycle, which is linked to an election_id
 
 **Request Syntax:**
       To query candidates:
@@ -205,7 +206,7 @@ JSON dictionary
 
 **Returns:**
 
-Below is sample return dictionary for a candidate request. Note that "stances" are embedded within "issues". For instance, a candidate may have stances about the issue of National Security.
+Below is sample return dictionary for a candidate request. Note that "stances" are embedded within `issues.stances`. For instance, a candidate may have stances about the issue of National Security.
 
 ```
 {
