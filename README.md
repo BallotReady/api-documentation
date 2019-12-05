@@ -150,6 +150,7 @@ JSON dictionary
       "eligibility_requirements": null,
       "has_unknown_boundaries": false,
       "slug": null,
+      "la_style": false,
       "salary": null,
       "number_of_seats": 1,
       "name": "New York City Public Advocate (unexpired term)",
