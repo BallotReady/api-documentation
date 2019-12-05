@@ -190,10 +190,12 @@ The best way to make sure you get only the values for the election you want is t
 Election results can mean different things for different types of primary election races. If the position is Louisiana style (`la_style: true`), then the position can be won outright in the primary. In a normal primary election (`la_style: false`), this is not the case.
 
 In a normal (`la_style: false`) primary election:
-RUNOFF means the candidate advancing to a primary runoff.
+
+RUNOFF means the candidate is advancing to a primary runoff.
 PRIMARY WIN means the candidate won the primary and is moving on to the general election.
 
 In a Louisiana Style (`la_style: true`) primary election:
+
 WON means the candidate won outright.
 RUNOFF means the candidate is advancing to the runoff/general eletion.
 
