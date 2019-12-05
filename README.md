@@ -197,7 +197,7 @@ PRIMARY WIN means the candidate won the primary and is moving on to the general 
 In a Louisiana Style (`la_style: true`) primary election:
 
 WON means the candidate won outright.
-RUNOFF means the candidate is advancing to the runoff/general eletion.
+RUNOFF means the candidate is advancing to the runoff/general election.
 
 
 ## Candidates API <a name="candidates_api"></a>
