@@ -13,6 +13,7 @@
 5. [Normalized Positions API](#norm_positions_api)
 6. [Elected Officials API](#elected_officials)
 7. [Districts API](#districts)
+8. [Polling Places API](#polling_places)
 
 
 ## Elections API  <a name="elections_api"></a>
@@ -465,3 +466,18 @@ JSON dictionary
       "id": string
     },
 ```
+
+## Polling Places API <a name="polling_places"></a>
+**Parameters:**
+
+      address - full text string address (optional)
+      lat (optional)
+      lon (optional)
+
+**Request Syntax:**
+
+**Return Type:**
+
+JSON dictionary
+
+**Returns:**
