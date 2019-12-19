@@ -473,11 +473,47 @@ JSON dictionary
       address - full text string address (optional)
       lat (optional)
       lon (optional)
+      election_id (required) - see /elections API for method to fetch id. Required to deliver polling places only for a specific election since these may change
 
 **Request Syntax:**
 
+      To query the polling places endpoint, you can hit the /polling_places endpoint. The below election_id = 73 is for the 2018 Illinois Midterm election cycle.
+
+      curl -H "x-api-key: APIKEY" "https://api.civicengine.com/polling_places?address=1060+W+Addison+St+Chicago+IL+60613&election_id=73"
 **Return Type:**
 
 JSON dictionary
 
 **Returns:**
+```
+{
+  "timestamp": datetime,
+  "coords": {
+    "latitude": float,
+    "longitude": float
+  },
+  "results": [
+    {
+      "name": string
+      "address_line_1": string,
+      "address_line_2": string,
+      "city": string,
+      "state": string,
+      "zip": string,
+      "id": string,
+      "ballot_drop_off": boolean,
+      "in_person_voting": boolean,
+      "in_person_absentee": boolean,
+      "polling_days": [
+        {
+          "open_at": datetime,
+          "closet_at": datetime,
+          "early_voting": boolean
+         },...
+      ],
+      "coords": {
+        "latitude": float,
+        "longitude": float
+      },      
+    },
+ ```
