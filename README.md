@@ -65,6 +65,7 @@ JSON dictionary
       include_candidates - choose to include candidates in API response or not
       include_endorsements - choose to include endorsements in API response or not
       include_office_holders - choose to include office holders in API response or not
+      include_uncertified_candidates  - choose to include uncertified candidates in API response or not
       include_volunteer_urls  - choose to include volunteer urls in API response or not
       level - (federal/state/local/county) - return only positions at a single level
       lat/lon (optional) - instead of using address, pass lat/lon and bypass geocoding
@@ -514,6 +515,6 @@ JSON dictionary
       "coords": {
         "latitude": float,
         "longitude": float
-      },      
+      },
     },
  ```
