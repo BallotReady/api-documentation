@@ -519,9 +519,5 @@ JSON dictionary
           "early_voting": boolean
          },...
       ],
-      "coords": {
-        "latitude": float,
-        "longitude": float
-      },
-    },
+    }
  ```
