@@ -489,7 +489,7 @@ JSON dictionary
 
       To query the polling places endpoint, you can hit the /polling_places endpoint. The below election_id = 73 is for the 2018 Illinois Midterm election cycle. You must pass in EITHER the address parameters (street_number, pre_directional, street_name, street_suffix, post_directional, city, state, zipcode) and/or the latitude and longitude parameters (lat, lon). In the case of using address parameters, it will attempt a best matching using our data derived from state voter files. If that fails, it will geocode to a latitude and longitude, and use our shapefile data.
 
-      curl -H "x-api-key: APIKEY" "https://api.civicengine.com/polling_places?address=1060+W+Addison+St+Chicago+IL+60613&election_id=73"
+      curl -H "x-api-key: APIKEY" "https://api.civicengine.com/polling_places?street_number=1060&pre_directional=W&street_name=Addison&street_suffix=St&city=Chicago&state=IL&zipcode=60613&election_id=73"
 **Return Type:**
 
 JSON dictionary
