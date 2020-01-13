@@ -470,17 +470,20 @@ JSON dictionary
 
 ## Polling Places API <a name="polling_places"></a>
 **Parameters:**
-      * street_number (optional) - Example: 1060
-      * pre_directional (optional) Example: West (W)
-      * street_name  (optional) - Example: Addison
-      * street_suffix (optional) - Example: Street (or St)
-      * post_directional (optional) Example: SE in 2400 E Capitol St SE
-      * city (optional) - Example: Chicago
-      * state (optional) - Example: Illinois (IL)
-      * zipcode (optional) - Example: 60613
-      * lat (optional)
-      * lon (optional)
-      * election_id (required) - see /elections API for method to fetch id. Required to deliver polling places only for a specific election since these may change
+
+```
+      street_number (optional) - Example: 1060
+      pre_directional (optional) Example: West (W)
+      street_name  (optional) - Example: Addison
+      street_suffix (optional) - Example: Street (or St)
+      post_directional (optional) Example: SE in 2400 E Capitol St SE
+      city (optional) - Example: Chicago
+      state (optional) - Example: Illinois (IL)
+      zipcode (optional) - Example: 60613
+      lat (optional)
+      lon (optional)
+      election_id (required) - see /elections API for method to fetch id. Required to deliver polling places only for a specific election since these may change
+```
 
 **Request Syntax:**
 
