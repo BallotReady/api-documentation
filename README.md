@@ -470,15 +470,21 @@ JSON dictionary
 
 ## Polling Places API <a name="polling_places"></a>
 **Parameters:**
-
-      address - full text string address (optional)
+      street_number (optional) - Example: 1060
+      pre_directional (optional) Example: West (W)
+      street_name  (optional) - Example: Addison
+      street_suffix (optional) - Example: Street (or St)
+      post_directional (optional) Example: SE in 2400 E Capitol St SE
+      city (optional) - Example: Chicago
+      state (optional) - Example: Illinois (IL)
+      zipcode (optional) - Example: 60613
       lat (optional)
       lon (optional)
       election_id (required) - see /elections API for method to fetch id. Required to deliver polling places only for a specific election since these may change
 
 **Request Syntax:**
 
-      To query the polling places endpoint, you can hit the /polling_places endpoint. The below election_id = 73 is for the 2018 Illinois Midterm election cycle.
+      To query the polling places endpoint, you can hit the /polling_places endpoint. The below election_id = 73 is for the 2018 Illinois Midterm election cycle. You must pass in EITHER the address parameters (street_number, pre_directional, street_name, street_suffix, post_directional, city, state, zipcode) and/or the latitude and longitude parameters (lat, lon). In the case of using address parameters, it will attempt a best matching using our data derived from state voter files. If that fails, it will geocode to a latitude and longitude, and use our shapefile data.
 
       curl -H "x-api-key: APIKEY" "https://api.civicengine.com/polling_places?address=1060+W+Addison+St+Chicago+IL+60613&election_id=73"
 **Return Type:**
@@ -489,6 +495,7 @@ JSON dictionary
 ```
 {
   "timestamp": datetime,
+  "match-method": string, (VOTERFILE or SHAPEFILE)
   "coords": {
     "latitude": float,
     "longitude": float
