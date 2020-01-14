@@ -523,7 +523,19 @@ JSON dictionary
         "precinct":  string,
         "address_line_1": string,
         "address_line_2": string,
-        "id": string
+        "id": string,
+        "hours": [{
+          "updated_at": datetime,
+          "polling_place_id": integer,
+          "early_voting": boolean,
+          "timezone": string,
+          "close_at": datetime,
+          "open_at": datetime
+          }
+        ]
+      }
+    ],
+
       }
     ]
     "early_voting": [],
