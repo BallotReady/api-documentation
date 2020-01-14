@@ -500,7 +500,8 @@ JSON dictionary
 {
   "timestamp": datetime,
   "match-mode": {
-    "election_day": "SHAPEFILE" or "VOTERFILE"
+    "election_day": enum("SHAPEFILE", "VOTERFILE"),
+    "early_voting": enum("SHAPEFILE", "VOTERFILE")
   },
   "coords": {
     "latitude": float,
@@ -509,20 +510,20 @@ JSON dictionary
   "results": {
     "election_day": [
       {
-        "city": string,
         "name": string,
-        "zip": string,
         "mail_in_address": string,
         "country": string,
         "ballot_drop_off": boolean,
         "updated_at": datetime,
         "in_person_voting": boolean,
         "in_person_absentee": boolean,
-        "state": string,
         "timezone":  string,
         "precinct":  string,
         "address_line_1": string,
         "address_line_2": string,
+        "city": string,
+        "state": string,
+        "zip": string,
         "id": string,
         "hours": [{
           "updated_at": datetime,
