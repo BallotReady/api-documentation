@@ -490,7 +490,7 @@ JSON dictionary
 To query the polling places endpoint, you can hit the /polling_places endpoint. The below election_id = 355 is for the 2019 Texas Runoff election cycle. You must pass in a latitude+longitude. The address parameters (street_number, pre_directional, street_name, street_suffix, post_directional, city, state, zipcode) are optional but if provided will match the polling place to the voter file, instead of our shapefiles. If you provide any address parameters, you must provide all of them (ie you need to provide null fields for things like `post_directional`, even if `street_name` and `street_number` are not null)
       
 ``` 
-      curl -H "x-api-key: APIKEY" "https://api.civicengine.com/polling_places?longitude=-96.5939376&latitude=32.70771&election_id=355&street_number=3729&pre_directional=&street_name=ELM+POINT&city=BALCH+SPRINGS&state=TX&zipcode=75180&street_suffix=DR&post_directional="
+curl -H "x-api-key: APIKEY" "https://api.civicengine.com/polling_places?longitude=-96.5939376&latitude=32.70771&election_id=355&street_number=3729&pre_directional=&street_name=ELM+POINT&city=BALCH+SPRINGS&state=TX&zipcode=75180&street_suffix=DR&post_directional="
 ```
 
 **Return Type:**
