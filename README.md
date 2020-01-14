@@ -472,7 +472,10 @@ JSON dictionary
 **Parameters:**
 
 ```
- street_number (optional) - Example: 1060
+ latitude (REQUIRED)
+ longitude (REQUIRED)
+
+street_number (optional) - Example: 1060
  pre_directional (optional) Example: West (W)
  street_name  (optional) - Example: Addison
  street_suffix (optional) - Example: Street (or St)
@@ -480,14 +483,12 @@ JSON dictionary
  city (optional) - Example: Chicago
  state (optional) - Example: Illinois (IL)
  zipcode (optional) - Example: 60613
- lat (optional)
- lon (optional)
  election_id (required) - see /elections API for method to fetch id. Required to deliver polling places only for a specific election since these may change
 ```
 
 **Request Syntax:**
 
-      To query the polling places endpoint, you can hit the /polling_places endpoint. The below election_id = 73 is for the 2018 Illinois Midterm election cycle. You must pass in EITHER the address parameters (street_number, pre_directional, street_name, street_suffix, post_directional, city, state, zipcode) and/or the latitude and longitude parameters (lat, lon). In the case of using address parameters, it will attempt a best matching using our data derived from state voter files. If that fails, it will geocode to a latitude and longitude, and use our shapefile data.
+      To query the polling places endpoint, you can hit the /polling_places endpoint. The below election_id = 73 is for the 2018 Illinois Midterm election cycle. You must pass in a latitude+longitude. The address parameters (street_number, pre_directional, street_name, street_suffix, post_directional, city, state, zipcode) are optional but if provided will match the polling place to the voter file, instead of our shapefiles. 
 
       curl -H "x-api-key: APIKEY" "https://api.civicengine.com/polling_places?street_number=1060&pre_directional=W&street_name=Addison&street_suffix=St&city=Chicago&state=IL&zipcode=60613&election_id=73"
 **Return Type:**
@@ -498,29 +499,34 @@ JSON dictionary
 ```
 {
   "timestamp": datetime,
-  "match-method": string, (VOTERFILE or SHAPEFILE)
+  "match-mode": {
+    "election_day": "SHAPEFILE" or "VOTERFILE"
+  },
   "coords": {
     "latitude": float,
     "longitude": float
   },
-  "results": [
-    {
-      "name": string
-      "address_line_1": string,
-      "address_line_2": string,
-      "city": string,
-      "state": string,
-      "zip": string,
-      "id": string,
-      "ballot_drop_off": boolean,
-      "in_person_voting": boolean,
-      "in_person_absentee": boolean,
-      "polling_days": [
-        {
-          "open_at": datetime,
-          "closet_at": datetime,
-          "early_voting": boolean
-         },...
-      ],
+  "results": {
+    "election_day": [
+      {
+        "city": string,
+        "name": string,
+        "zip": string,
+        "mail_in_address": string,
+        "country": string,
+        "ballot_drop_off": boolean,
+        "updated_at": datetime,
+        "in_person_voting": boolean,
+        "state": string,
+        "timezone":  string,
+        "precinct":  string,
+        "address_line_1": string,
+        "address_line_2": string,
+        "id": string
+      }
+    ]
+    "early_voting": [],
+  },
+
     }
  ```
