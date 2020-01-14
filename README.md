@@ -517,6 +517,7 @@ JSON dictionary
         "ballot_drop_off": boolean,
         "updated_at": datetime,
         "in_person_voting": boolean,
+        "in_person_absentee": boolean,
         "state": string,
         "timezone":  string,
         "precinct":  string,
