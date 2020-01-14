@@ -538,10 +538,34 @@ JSON dictionary
         ]
       }
     ],
-
+    "early_voting": [
+      {
+        "name": string,
+        "mail_in_address": string,
+        "country": string,
+        "ballot_drop_off": boolean,
+        "updated_at": datetime,
+        "in_person_voting": boolean,
+        "in_person_absentee": boolean,
+        "timezone":  string,
+        "precinct":  string,
+        "address_line_1": string,
+        "address_line_2": string,
+        "city": string,
+        "state": string,
+        "zip": string,
+        "id": string,
+        "hours": [{
+          "updated_at": datetime,
+          "polling_place_id": integer,
+          "early_voting": boolean,
+          "timezone": string,
+          "close_at": datetime,
+          "open_at": datetime
+          }
+        ]
       }
     ]
-    "early_voting": [],
   },
 
     }
