@@ -493,6 +493,11 @@ To query the polling places endpoint, you can hit the /polling_places endpoint. 
 curl -H "x-api-key: APIKEY" "https://api.civicengine.com/polling_places?longitude=-96.5939376&latitude=32.70771&election_id=355&street_number=3729&pre_directional=&street_name=ELM+POINT&city=BALCH+SPRINGS&state=TX&zipcode=75180&street_suffix=DR&post_directional="
 ```
 
+Another test address you may use:
+```
+curl -H "x-api-key: APIKEY" "https://api.civicengine.com/polling_places?longitude=-92.8183925&latitude=41.0342603&election_id=903&street_number=800&pre_directional=&street_name=Highway+5&city=Albia&state=IA&zipcode=52531&street_suffix=&post_directional=" 
+```
+
 **Return Type:**
 
 JSON dictionary
@@ -501,7 +506,7 @@ JSON dictionary
 ```
 {
   "timestamp": datetime,
-  "match-mode": {
+  "match_mode": {
     "election_day": enum("SHAPEFILE", "VOTERFILE"),
     "early_voting": enum("SHAPEFILE", "VOTERFILE")
   },
