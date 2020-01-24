@@ -20,7 +20,7 @@
 **Parameters:**
 
       state - state the election takes place in (optional)
-      start-at - starting timestamp of queried elections (optional)
+      start_at - starting timestamp of queried elections (optional)
       end_at -  end timestamp of queried elections in the search request (optional)
       updated_since - beginning timestamp of record updates in the search request (optional)
 
