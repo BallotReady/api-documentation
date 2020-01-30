@@ -23,6 +23,10 @@
       start_at - starting timestamp of queried elections (optional)
       end_at -  end timestamp of queried elections in the search request (optional)
       updated_since - beginning timestamp of record updates in the search request (optional)
+      latitude - SRID 4326 compatible latitude (optional)
+      longitude - SRID 4326 compatible longitude (optional)
+
+Note: If latitude and longitude are provided, then the API will return results using a shapefile intersect with our elections. Otherwise, it will match based on `state`
 
 **Request Syntax:**
 
